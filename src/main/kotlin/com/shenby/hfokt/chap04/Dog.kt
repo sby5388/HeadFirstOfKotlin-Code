@@ -6,7 +6,7 @@ import java.util.*
  * @param weight 重量，单位磅
  *
  */
-class Dog(val name: String, var weight_param: Int, val breed_param: String) {
+class Dog(val name: String, weight_param: Int, breed_param: String) {
 
     init {
         print("Dog $name has been created. ")
@@ -65,8 +65,7 @@ fun main() {
         println("My dog enjoys $item")
     }
     val dogs = arrayOf(
-        Dog("Kelpie", 20, "Westie"),
-        Dog("Ripper", 10, "Poodle")
+        Dog("Kelpie", 20, "Westie"), Dog("Ripper", 10, "Poodle")
     )
     dogs[1].bark()
     dogs[1].weight = 15

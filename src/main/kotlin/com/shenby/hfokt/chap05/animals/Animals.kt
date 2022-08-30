@@ -1,24 +1,23 @@
 package com.shenby.hfokt.chap05.animals
 
+import com.shenby.hfokt.chap06.Roamable
+
 //open:该类可以被继承，默认是不允许被继承
-open class Animal {
+abstract class Animal : Roamable {
 
     //子类可以覆盖的属性
-    open val image = ""
-    open val food = ""
-    open val habitat = ""
+    abstract val image: String
+    abstract val food: String
+    abstract val habitat: String
     var hunger = 0
 
-    //子类可以覆盖的方法
-    open fun makeNoise() {
-        println("makeNoise")
-    }
 
-    open fun eat() {
-        println("eat")
-    }
+    //非abstract的子类必须要实现的方法，如果父类实现的就不用重复实现，作用同JAVA的abstract
+    abstract fun makeNoise()
 
-    open fun roam() {
+    abstract fun eat();
+
+    override fun roam() {
         println("roam")
     }
 
@@ -51,9 +50,13 @@ class Hippo : Animal() {
     override fun eat() {
         println("the hippo is eating $food")
     }
+
+    fun hippoAble() {
+        println("河马才有的能力")
+    }
 }
 
-open class Canine : Animal() {
+abstract class Canine : Animal() {
     override fun roam() {
         println("The Canine is roam")
     }

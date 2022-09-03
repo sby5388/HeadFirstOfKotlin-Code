@@ -12,6 +12,7 @@ data class Grocery(
     val category: String,
     val unit: String,
     val unitPrice: Double,
+    val quantity: Int = 0
 )
 
 

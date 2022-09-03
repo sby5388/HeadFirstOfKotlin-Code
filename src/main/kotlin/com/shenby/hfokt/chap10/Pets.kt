@@ -2,7 +2,12 @@ package com.shenby.hfokt.chap10
 
 abstract class Pet(var name: String)
 
-class Cat(name: String) : Pet(name)
+class Cat(name: String, val weight: Int = 0) : Pet(name) {
+    override fun toString(): String {
+        return "Cat(name='$name',weight=$weight)"
+    }
+}
+
 class Dog(name: String) : Pet(name)
 class Fish(name: String) : Pet(name)
 
@@ -48,6 +53,14 @@ class Contest<T : Pet>(var vet: Vet<in T>) {
             }
         }
         return result
+    }
+
+    //add for chap12 内置高阶函数#泳池谜题
+    fun getWinner2(): Set<T> {
+        val highScore = scores.values.maxBy { it }
+        val winners = scores.filter { it.value == highScore }.keys
+        winners.forEach { println("Winner: ${it.name}") }
+        return winners;
     }
 }
 

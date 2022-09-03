@@ -9,10 +9,12 @@ fun main() {
     //有序，可重复；可变
     val listOf = mutableListOf("茶", "鸡蛋", "牛奶")
     println("listOf original:$listOf")
+    println("mutableListOf is ${listOf::class.java.name}")
     //不可变
     val extraList = listOf("曲奇饼干", "糖", "鸡蛋")
     listOf.addAll(extraList)
     println("listOf added :$listOf")
+    println("listOf is ${extraList::class.java.name}")
 
     if (listOf.contains("茶")) {
         //对list可以使用数组的操作符 listOf[listOf.indexOf("茶")] = "咖啡"

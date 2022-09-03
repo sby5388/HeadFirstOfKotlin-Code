@@ -3,8 +3,6 @@ package com.shenby.hfokt.chap12
 import com.shenby.hfokt.chap07.datas.Person
 import com.shenby.hfokt.chap10.Cat
 
-private val s = ""
-
 fun main() {
     val cats = listOf(Cat("蓝猫", 10), Cat("大橘", 20), Cat("家猫", 8))
     //maxBy:找到最大
